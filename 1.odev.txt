@@ -1,0 +1,189 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace odev20aralık
+{
+    //Hocam bilgisayardan kalkmama gerekiyordu o yüzden çok özenemedim kusara bakmayın
+    enum fonsiyonlar
+    {
+        Okul,
+        Hobi,
+        Dükkan
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bastan:
+
+            Console.WriteLine("1)" +fonsiyonlar.Okul+" Sitili Konuşma");
+            Console.WriteLine("2)" +fonsiyonlar.Hobi+" Sitili Konuşma");
+            Console.WriteLine("3)" +fonsiyonlar.Dükkan+" Sitili Konuşma");
+            Console.WriteLine("==>");
+            int secim = Convert.ToInt32(Console.ReadLine());
+
+            if(secim == 1)
+            {
+                okulstyle okul = new okulstyle();
+                okul.obir();
+                okul.oiki();
+                okul.ouc();
+                okul.odort();
+                goto bastan;
+            }
+            if(secim == 2)
+            {
+                hobilerstyle hobi = new hobilerstyle();
+                hobi.hbir();
+                hobi.hiki();
+                hobi.huc();
+                hobi.hdort();
+                goto bastan;
+            }            
+            if(secim == 3)
+            {
+                dukkanstyle dukkan = new dukkanstyle();
+                dukkan.dbir();
+                dukkan.diki();
+                dukkan.duc();
+                dukkan.ddort();
+                goto bastan;
+            }          
+            if(secim >= 4 && secim <= 0)
+            {
+                goto bastan;
+            }
+        }
+        
+    }
+
+    public class okulstyle
+    {
+
+        public void obir()
+        {
+            Console.WriteLine("Ners ne?");
+        }
+
+        public void oiki()
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(1,2);
+            if(sayi == 1)
+            {
+                Console.WriteLine("Ders Matematik");
+            }
+            if(sayi == 2)
+            {
+                Console.WriteLine("Ders Türkçe");
+            }
+        }
+
+        public void ouc()
+        {
+            Console.WriteLine("Kitaplarını aldınmı?");
+        }
+
+        public void odort()
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(1, 2);
+            if (sayi == 1)
+            {
+                Console.WriteLine("Aldım");
+            }
+            if (sayi == 2)
+            {
+                Console.WriteLine("Almadım");
+            }
+        }
+    }
+
+    public class hobilerstyle
+    {
+
+        public void hbir()
+        {
+            Console.WriteLine("Hobin Ne?");
+        }
+
+        public void hiki()
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(1, 2);
+            if (sayi == 1)
+            {
+                Console.WriteLine("Basketbol");
+            }
+            if (sayi == 2)
+            {
+                Console.WriteLine("Futbol");
+            }
+        }
+
+        public void huc()
+        {
+            Console.WriteLine("Senin Hobin Ne?");
+        }
+
+        public void hdort()
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(1, 2);
+            if (sayi == 1)
+            {
+                Console.WriteLine("Tenis");
+            }
+            if (sayi == 2)
+            {
+                Console.WriteLine("Kitap Okumak");
+            }
+        }
+    }
+
+    public class dukkanstyle
+    {
+
+        public void dbir()
+        {
+            Console.WriteLine("Merhabalar ne alırdınız?");
+        }
+
+        public void diki()
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(1, 2);
+            if (sayi == 1)
+            {
+                Console.WriteLine("Poğaça");
+            }
+            if (sayi == 2)
+            {
+                Console.WriteLine("Simit");
+            }
+        }
+
+        public void duc()
+        {
+            Console.WriteLine("Kaç tl?");
+        }
+
+        public void ddort()
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(1, 2);
+            if (sayi == 1)
+            {
+                Console.WriteLine("5Tl");
+            }
+            if (sayi == 2)
+            {
+                Console.WriteLine("4Tl");
+            }
+        }
+    }
+}
